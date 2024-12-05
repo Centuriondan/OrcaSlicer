@@ -71,7 +71,7 @@ public:
 
 class HttpServer
 {
-    boost::asio::ip::port_type port;
+    uint16_t port;
 
 public:
     class Response
@@ -98,7 +98,7 @@ public:
         void write_response(std::stringstream& ssOut) override;
     };
 
-    HttpServer(boost::asio::ip::port_type port = LOCALHOST_PORT);
+    HttpServer(uint16_t port = LOCALHOST_PORT);
 
     boost::thread m_http_server_thread;
     bool          start_http_server = false;
